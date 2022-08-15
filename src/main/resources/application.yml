@@ -1,0 +1,30 @@
+server:
+  port: 9093
+  
+spring:
+  application:
+    name: API_GATEWAY
+  
+  cloud:
+    gateway:
+      routes:
+      - id: USER-SERVICE
+        uri: http://localhost:9091
+        predicates:
+        - Path=/user/**
+        
+      - id: PRODUCT-SERVICE
+        uri: http://localhost:9092
+        predicates:
+        - Path=/product/**
+        
+      - id: PRODUCT-SERVICE
+        uri: http://localhost:9092
+        predicates:
+        - Path=/cart/**
+        
+      - id: PRODUCT-SERVICE
+        uri: http://localhost:9092
+        predicates:
+        - Path=/payment/**
+          
