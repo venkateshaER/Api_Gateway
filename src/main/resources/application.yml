@@ -27,4 +27,9 @@ spring:
         uri: http://localhost:9092
         predicates:
         - Path=/payment/**
+        
+      - id: PRODUCT-SERVICE
+        uri: http://localhost:9092
+        predicates:
+        - Path=/coupon/**
           
